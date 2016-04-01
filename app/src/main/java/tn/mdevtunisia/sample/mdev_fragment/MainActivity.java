@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import tn.mdevtunisia.sample.mdev_fragment.fragment.MyFragment;
+import tn.mdevtunisia.sample.mdev_fragment.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private MyFragment mMyFragment;
+    private MainFragment mMyFragment;
     private FragmentManager mFragmentManager;
 
     @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openFragment() {
 
-        mMyFragment = MyFragment.newInstance();
+        mMyFragment = MainFragment.newInstance();
         mFragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = mFragmentManager
