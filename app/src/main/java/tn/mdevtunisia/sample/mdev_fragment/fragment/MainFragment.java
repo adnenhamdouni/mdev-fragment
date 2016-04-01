@@ -13,7 +13,7 @@ import tn.mdevtunisia.sample.mdev_fragment.R;
 /**
  * Created by adnenhamdouni on 01/04/2016.
  */
-public class MyFragment extends Fragment {
+public class MainFragment extends Fragment {
 
     private TextView mTextview;
 
@@ -21,8 +21,8 @@ public class MyFragment extends Fragment {
 
     private String action;
 
-    public static MyFragment newInstance() {
-        MyFragment fragment = new MyFragment();
+    public static MainFragment newInstance() {
+        MainFragment fragment = new MainFragment();
         return fragment;
     }
 
@@ -33,7 +33,7 @@ public class MyFragment extends Fragment {
 
         mContext = getActivity().getApplicationContext();
 
-        View view = inflater.inflate(R.layout.fragment_layout,
+        View view = inflater.inflate(R.layout.fragment_main,
                 container, false);
 
         initView(view);

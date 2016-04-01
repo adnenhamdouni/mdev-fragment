@@ -11,13 +11,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import tn.mdevtunisia.sample.mdev_fragment.fragment.MyFragment;
+import tn.mdevtunisia.sample.mdev_fragment.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    private MyFragment mMyFragment;
-    private FragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +31,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        openFragment();
-    }
-
-    private void openFragment() {
-
-        mMyFragment = MyFragment.newInstance();
-        mFragmentManager = getSupportFragmentManager();
-
-        FragmentTransaction fragmentTransaction = mFragmentManager
-                .beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, mMyFragment);
-        fragmentTransaction.commit();
     }
 
 
