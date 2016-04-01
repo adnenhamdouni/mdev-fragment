@@ -3,6 +3,7 @@ package tn.mdevtunisia.sample.mdev_fragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -12,11 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import tn.mdevtunisia.sample.mdev_fragment.fragment.MainFragment;
+import tn.mdevtunisia.sample.mdev_fragment.fragment.SecondFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainFragment.FragmentListener {
 
 
-    private MainFragment mMyFragment;
+    private MainFragment mMyMainFragment;
+    private SecondFragment mMySecondFragment;
+
+
     private FragmentManager mFragmentManager;
 
     @Override
@@ -35,17 +40,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        openFragment();
+        //First Start
+        mMyMainFragment = MainFragment.newInstance(this);
+        openFragment(mMyMainFragment);
     }
 
-    private void openFragment() {
+    private void openFragment(Fragment fragment) {
 
-        mMyFragment = MainFragment.newInstance();
         mFragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = mFragmentManager
                 .beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, mMyFragment);
+        fragmentTransaction.replace(R.id.content_frame, fragment);
         fragmentTransaction.commit();
     }
 
@@ -70,5 +76,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClickPerform() {
+        //On click button from first fragment, listener notify MainActivity
+        //Here we call the second Fragment
+        //First Start
+        mMySecondFragment = SecondFragment.newInstance();
+        openFragment(mMySecondFragment);
+
     }
 }
