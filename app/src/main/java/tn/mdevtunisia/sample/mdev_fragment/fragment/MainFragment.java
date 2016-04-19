@@ -36,15 +36,14 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main,
                 container, false);
 
-        initView(view);
+        mTextview =  (TextView) view.findViewById(R.id.textView);
+        mTextview.setText("Hello Fragment :)!");
+
 
         return view;
 
     }
 
-    private void initView(View view) {
-        mTextview =  (TextView) view.findViewById(R.id.textView);
-        mTextview.setText("Hello Fragment :)!");
-    }
+
 
 }

@@ -12,9 +12,7 @@
     tools:context="tn.mdevtunisia.sample.mdev_fragment.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <fragment
         android:id="@+id/fragment"
         android:name="tn.mdevtunisia.sample.mdev_fragment.fragment.MainFragment"
         android:layout_width="match_parent"
